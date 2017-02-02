@@ -1,0 +1,2 @@
+﻿# Assemblies will be dynamically loaded by Shift Server on startup
+Shift.Demo.Jobs.dll
