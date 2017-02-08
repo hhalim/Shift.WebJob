@@ -40,12 +40,8 @@ namespace Shift.WebJob
 
         public ShiftService()
         {
-            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            //Console.WriteLine("BaseDirectory: " + baseDir);
-
             var config = new Shift.ServerConfig();
-            config.AssemblyListPath = baseDir + ConfigurationManager.AppSettings["AssemblyListPathPart"];
-            config.AssemblyBaseDir = baseDir + ConfigurationManager.AppSettings["AssemblyBaseDirPart"]; //drop DLL dependencies for jobs here
+            config.AssemblyListPath = ConfigurationManager.AppSettings["AssemblyListPath"];
             config.MaxRunnableJobs = Convert.ToInt32(ConfigurationManager.AppSettings["MaxRunableJobs"]);
             config.ProcessID = ConfigurationManager.AppSettings["ShiftPID"];
             config.DBConnectionString = ConfigurationManager.ConnectionStrings["ShiftDBConnection"].ConnectionString;
