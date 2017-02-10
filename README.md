@@ -29,6 +29,6 @@ There are two ways to deploy the Shift WebJob app:
 - Manual. Compile, bundle and deploy the web job to an Azure web site. Use Microsoft documentation here: <https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs>
 - Publish from Visual Studio. Open the project solution with Visual Studio, right click on the Shift.WebJob project and click Publish as Azure WebJob, follow the pop-up wizard to push the app into your Azure account. If an Azure website is required, create one through the Azure portal and use it to populate the connection wizard.
 
-Confirm that the web job app is running successfully. To view the log file, use the Kudu dashboard at App Services > [your website] > Advanced Tools > Tools > WebJobs dashboard. Click the Shift web job, and click Toggle Output button to view log and check that no error are shown.
+Confirm that the web job app is running successfully from the Azure portal at App Services > [your website] > Web Jobs. To view the log file, use the Kudu dashboard at App Services > [your website] > Advanced Tools > Tools > WebJobs dashboard. Click the Shift web job, and click Toggle Output button to view log and check that no error are shown.
 
 Use the [Shift.Demo.Client](https://github.com/hhalim/Shift.Demo.Client) to send jobs to the Shift WebJob. Please ensure that the configuratio setting in the client app points correctly to the Azure  
