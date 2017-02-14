@@ -53,6 +53,9 @@ namespace Shift.WebJob
             config.ServerTimerInterval = Convert.ToInt32(ConfigurationManager.AppSettings["TimerInterval"]); //optional: default every 5 sec for getting jobs ready to run and run them
             config.ServerTimerInterval2 = Convert.ToInt32(ConfigurationManager.AppSettings["CleanUpTimerInterval"]); //optional: default every 10 sec for server CleanUp()
 
+            config.AutoDeletePeriod = Convert.ToInt32(ConfigurationManager.AppSettings["AutoDeletePeriod"]);
+            //config.AutoDeleteStatus = new List<JobStatus?> { JobStatus.Completed, JobStatus.Error }; //Auto delete only the jobs that had Stopped or with Error
+
             jobServer = new Shift.JobServer(config);
 
         }
