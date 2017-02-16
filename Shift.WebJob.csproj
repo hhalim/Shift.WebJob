@@ -93,20 +93,20 @@
       <HintPath>packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shift, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Shift.1.0.0\lib\net461\Shift.dll</HintPath>
+    <Reference Include="Shift, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Shift.1.0.1\lib\net461\Shift.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shift.DataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Shift.1.0.0\lib\net461\Shift.DataLayer.dll</HintPath>
+    <Reference Include="Shift.DataLayer, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Shift.1.0.1\lib\net461\Shift.DataLayer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shift.DataLayer.Redis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Shift.1.0.0\lib\net461\Shift.DataLayer.Redis.dll</HintPath>
+    <Reference Include="Shift.DataLayer.Redis, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Shift.1.0.1\lib\net461\Shift.DataLayer.Redis.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shift.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Shift.1.0.0\lib\net461\Shift.Entities.dll</HintPath>
+    <Reference Include="Shift.Entities, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Shift.1.0.1\lib\net461\Shift.Entities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="StackExchange.Redis, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -166,7 +166,7 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets" Condition="Exists('packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets')" />
+  <Import Project="packages\Microsoft.Web.WebJobs.Publish.1.0.13\tools\webjobs.targets" Condition="Exists('packages\Microsoft.Web.WebJobs.Publish.1.0.13\tools\webjobs.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
