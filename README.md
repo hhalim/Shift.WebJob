@@ -3,19 +3,48 @@ Runs Shift server inside an Azure WebJob container.
 
 First, before deploying this app, sign up for Azure, and do this:
 - Create a storage account. This is required for Azure WebJob.
-- Create an Azure SQL server resource and run the [Shift create_db.sql](https://github.com/hhalim/Shift/blob/master/Shift/Database/create_db.sql) against it.
-- Create an Azure Redis Cache.
+- Create Azure Redis Cache or create an Azure SQL server resource and run the [Shift create_db.sql](https://github.com/hhalim/Shift/blob/master/Shift/Database/create_db.sql) against it.
 
-Update the Shift WebJob App.config file with Azure SQL and Azure cache connection strings.
+Update the Shift WebJob App.config file with Azure connection strings.
 ```
 <connectionStrings>
-  <!--AZURE SQL -->
-  <add name="ShiftDBConnection" connectionString="Server=tcp:shiftdb.database.windows.net,1433;Initial Catalog=ShiftJobsDB;Persist Security Info=False;User ID=[username];Password=[password];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" providerName="System.Data.SqlClient" />
+   <!--AZURE SQL 
+    <add name="ShiftDBConnection" connectionString="Server=tcp:shiftdb.database.windows.net,1433;Initial Catalog=ShiftJobsDB;Persist Security Info=False;User ID=[username];Password=[password];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" providerName="System.Data.SqlClient" />
+    -->
+    
+    <add name="ShiftDBConnection" connectionString="shiftcache.redis.cache.windows.net:6379,password=[password],ssl=false,abortConnect=False" providerName="System.Data.Redis" />
 </connectionStrings>
 
 <appSettings>
-  <add key="UseCache" value="true" /> <!-- Set to TRUE after RedisCache is up and running-->
-  <add key="RedisConfiguration" value="shiftcache.redis.cache.windows.net:6379,password=[password],ssl=false,abortConnect=False" />
+    <!-- Shift server settings -->
+    <add key="MaxRunableJobs" value="10" />
+    <add key="ShiftPID" value="fae0b0bdff8e4409b05011068f2c8054" />
+    <add key="TimerInterval" value="5000" />
+    <add key="CleanUpTimerInterval" value="10000" />
+
+    <add key="AssemblyFolder" value="client-assemblies\" />
+    <!-- <add key="AssemblyListPath" value="client-assemblies\assemblylist.txt" /> -->
+
+    <!-- 
+    <add key="StorageMode" value="mssql" />
+    -->
+    <add key="StorageMode" value="redis" />
+
+    <!-- Set to 0 or low 1 sec for StorageMode = redis-->
+    <add key="ProgressDBInterval" value="00:00:00" />
+    
+    <!-- Shift AutoDelete -->
+    <add key="AutoDeletePeriod" value="120" />
+
+    <!-- OPTIONAL Encryption of Parameters in DB -->
+    <!-- <add key ="ShiftEncryptionParametersKey" value="[OPTIONAL_ENCRYPTIONKEY]"/> -->
+
+    <!-- Shift Cache - Redis -->
+    <!-- Azure REDIS URL and key will be required -->
+    <!--
+    <add key="UseCache" value="true" /> 
+    <add key="RedisConfiguration" value="shiftcache.redis.cache.windows.net:6379,password=[password],ssl=false,abortConnect=False" />
+    -->
 </appSettings>
 ```
 
