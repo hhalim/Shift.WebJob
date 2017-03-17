@@ -60,4 +60,4 @@ There are two ways to deploy the Shift WebJob app:
 
 Confirm that the web job app is running successfully from the Azure portal at App Services > [your website] > Web Jobs. To view the log file, use the Kudu dashboard at App Services > [your website] > Advanced Tools > Tools > WebJobs dashboard. Click the Shift web job, and click Toggle Output button to view log and check that no error are shown.
 
-Use the [Shift.Demo.Client](https://github.com/hhalim/Shift.Demo.Client) to send jobs to the Shift WebJob. Please ensure that the configuratio setting in the client app points correctly to the Azure  
+Use the [Shift.Demo.Client](https://github.com/hhalim/Shift.Demo.Client) to send jobs to the Shift WebJob. Please ensure that the configuration setting in the client app points correctly to the Azure storage and cache.  
