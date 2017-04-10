@@ -70,11 +70,11 @@ namespace Shift.WebJob
 
         }
 
-        public void Start()
+        public async void Start()
         {
             try
             {
-                jobServer.RunServer();
+                await jobServer.RunServerAsync();
             }
             catch (Exception ex)
             {
@@ -83,9 +83,9 @@ namespace Shift.WebJob
 
         }
 
-        public void Stop()
+        public async void Stop()
         {
-            jobServer.StopServer();
+            await jobServer.StopServerAsync(); //Attempt to cancel and set stop
         }
     }
 }
