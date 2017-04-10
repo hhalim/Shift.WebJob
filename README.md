@@ -60,4 +60,9 @@ There are two ways to deploy the Shift WebJob app:
 
 Confirm that the web job app is running successfully from the Azure portal at App Services > [your website] > Web Jobs. To view the log file, use the Kudu dashboard at App Services > [your website] > Advanced Tools > Tools > WebJobs dashboard. Click the Shift web job, and click Toggle Output button to view log and check that no error are shown.
 
-Use the [Shift.Demo.Client](https://github.com/hhalim/Shift.Demo.Client) to send jobs to the Shift WebJob server. Please ensure that the configuration setting in the client app points correctly to the same Azure storage as configured for the server.  
+You can use the [Shift.Demo.Client](https://github.com/hhalim/Shift.Demo.Client) to send jobs to the Shift WebJob server. Please ensure that the configuration setting in the client app points correctly to the same Azure storage as configured for the server.  
+
+## Stopping WebJob
+Please note that stopping the Azure web job process is similar to switching off the power button, which means that all running jobs will be stuck in **running** status without actually running in the server. The zombie jobs status will change into an **error** status when the original web job process runs again.
+
+My recommendation is to send **STOP** command to all the running jobs and also wait for jobs without cancelation handle to complete successfully first before turning off the web job server.  
