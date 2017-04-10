@@ -63,6 +63,6 @@ Confirm that the web job app is running successfully from the Azure portal at Ap
 You can use the [Shift.Demo.Client](https://github.com/hhalim/Shift.Demo.Client) to send jobs to the Shift WebJob server. Please ensure that the configuration setting in the client app points correctly to the same Azure storage as configured for the server.  
 
 ## Stopping WebJob
-Please note that stopping the Azure web job process is similar to switching off the power button, which means that all running jobs will be stuck in **running** status without actually running in the server. The zombie jobs status will change into an **error** status when the original web job process runs again.
+Please note that stopping the Azure web job process is similar to pushing the off power switch, which means that all running jobs will be stuck in **running** status without actually running in the server. The zombie jobs status will change into an **error** status when the original web job process runs again.
 
 My recommendation is to send **STOP** command to all the running jobs and also wait for jobs without cancelation handle to complete successfully first before turning off the web job server.  
