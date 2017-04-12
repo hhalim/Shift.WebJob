@@ -54,9 +54,6 @@ namespace Shift.WebJob
             config.AutoDeletePeriod = string.IsNullOrWhiteSpace(autoDeletePeriod) ? null : (int?)Convert.ToInt32(autoDeletePeriod);
             //config.AutoDeleteStatus = new List<JobStatus?> { JobStatus.Completed, JobStatus.Error }; //Auto delete only the jobs that had Stopped or with Error
 
-            var threadMode = ConfigurationManager.AppSettings["ThreadMode"];
-            config.ThreadMode = string.IsNullOrWhiteSpace(threadMode) ? null : threadMode;
-
             config.StorageMode = ConfigurationManager.AppSettings["StorageMode"];
             var progressDBInterval = ConfigurationManager.AppSettings["ProgressDBInterval"];
             if (!string.IsNullOrWhiteSpace(progressDBInterval))
