@@ -157,6 +157,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\ShiftCore - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ShiftWebJob - Web Deploy.pubxml" />
     <None Include="Properties\webjob-publish-settings.json" />
   </ItemGroup>
