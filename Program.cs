@@ -46,6 +46,7 @@ namespace Shift.WebJob
             config.MaxRunnableJobs = Convert.ToInt32(ConfigurationManager.AppSettings["MaxRunnableJobs"]);
             config.ProcessID = ConfigurationManager.AppSettings["ShiftPID"];
             config.DBConnectionString = ConfigurationManager.ConnectionStrings["ShiftDBConnection"].ConnectionString;
+            config.DBAuthKey = ConfigurationManager.AppSettings["DocumentDBAuthKey"];
             config.Workers = Convert.ToInt32(ConfigurationManager.AppSettings["ShiftWorkers"]);
 
             config.ServerTimerInterval = Convert.ToInt32(ConfigurationManager.AppSettings["TimerInterval"]); //optional: default every 5 sec for getting jobs ready to run and run them
