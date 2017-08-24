@@ -15,37 +15,40 @@ Update the Shift WebJob App.config file with Azure connection strings.
     <add name="ShiftDBConnection" connectionString="shiftcache.redis.cache.windows.net:6379,password=[password],ssl=false,abortConnect=False" providerName="System.Data.Redis" />
 </connectionStrings>
 
-<appSettings>
+  <appSettings>
     <!-- Shift server settings -->
-    <add key="MaxRunableJobs" value="10" />
+    <add key="MaxRunnableJobs" value="2" />
+    <add key="ShiftWorkers" value="2" />
+    <!--
     <add key="ShiftPID" value="fae0b0bdff8e4409b05011068f2c8054" />
-    <add key="TimerInterval" value="5000" />
-    <add key="CleanUpTimerInterval" value="10000" />
+    -->
 
     <add key="AssemblyFolder" value="client-assemblies\" />
     <!-- <add key="AssemblyListPath" value="client-assemblies\assemblylist.txt" /> -->
 
     <!-- 
     <add key="StorageMode" value="mssql" />
+    <add key="StorageMode" value="mongo" />
+    <add key="StorageMode" value="documentdb" />
+    <add key="DocumentDBAuthKey" value="C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==" />
     -->
     <add key="StorageMode" value="redis" />
 
     <!-- Set to 0 or low 1 sec for StorageMode = redis-->
     <add key="ProgressDBInterval" value="00:00:00" />
     
-    <!-- Shift AutoDelete -->
-    <add key="AutoDeletePeriod" value="120" />
+    <add key="ForceStopServer" value="true" />
+    <add key="StopServerDelay" value="5000" />
 
-    <!-- OPTIONAL Encryption of Parameters in DB -->
-    <!-- <add key ="ShiftEncryptionParametersKey" value="[OPTIONAL_ENCRYPTIONKEY]"/> -->
+    <add key="TimerInterval" value="5000" />
+    <add key="CleanUpTimerInterval" value="10000" />
 
-    <!-- Shift Cache - Redis -->
-    <!-- Azure REDIS URL and key will be required -->
     <!--
-    <add key="UseCache" value="true" /> 
-    <add key="RedisConfiguration" value="shiftcache.redis.cache.windows.net:6379,password=[password],ssl=false,abortConnect=False" />
+    <add key="AutoDeletePeriod" value="120" />
+    <add key="ShiftEncryptionParametersKey" value="[OPTIONAL_ENCRYPTIONKEY]"/> 
+    <add key="PollingOnce" value="true" />
     -->
-</appSettings>
+  </appSettings>
 ```
 
 Update the Azure website configuration, not the WebJob App.config with the storage connections string:
