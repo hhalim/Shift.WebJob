@@ -66,8 +66,6 @@ namespace Shift.WebJob
 
             config.PollingOnce = Convert.ToBoolean(ConfigurationManager.AppSettings["PollingOnce"]);
 
-            //config.UseCache = Convert.ToBoolean(ConfigurationManager.AppSettings["UseCache"]);
-            //config.CacheConfigurationString = ConfigurationManager.AppSettings["RedisConfiguration"];
             //config.EncryptionKey = ConfigurationManager.AppSettings["ShiftEncryptionParametersKey"]; //optional
 
             jobServer = new Shift.JobServer(config);
